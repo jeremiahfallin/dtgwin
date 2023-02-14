@@ -9,15 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.4.9",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@next/font": "13.1.5",
+    "@twurple/api": "^5.3.4",
+    "@twurple/auth": "^5.3.4",
     "@types/node": "18.11.18",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
+    "colley-rankings": "^1.0.2",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.5",
+    "framer-motion": "^9.0.1",
     "next": "13.1.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-table": "^7.8.0",
+    "react-twitch-embed": "^3.0.1",
     "typescript": "4.9.4"
   }
 }
