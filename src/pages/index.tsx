@@ -23,10 +23,10 @@ import Container from "@/components/Container";
 
 export default function Home() {
   let ratings = bt(results, 10);
-  ratings = ratings.sort((a, b) => b.rating - a.rating);
+  ratings = ratings.sort((a: any, b: any) => b.rating - a.rating);
 
   let colleyRatings = colley(results);
-  colleyRatings = colleyRatings.sort((a, b) => b.rating - a.rating);
+  colleyRatings = colleyRatings.sort((a: any, b: any) => b.rating - a.rating);
 
   return (
     <Container>
