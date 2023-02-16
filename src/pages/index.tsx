@@ -21,7 +21,7 @@ import massey from "@/utils/massey";
 import results from "../results";
 
 export default function Home() {
-  let ratings = bt(results);
+  let ratings = bt(results, 10);
   ratings = ratings.sort((a, b) => b.rating - a.rating);
 
   let colleyRatings = colley(results);

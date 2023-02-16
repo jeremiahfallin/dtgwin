@@ -28,20 +28,36 @@ export default function calculateRatings(matches: any, iterations = 1) {
   let matchResults = generateArray(teams.length, teams.length, 0);
 
   // Get match results
+  // matches.forEach((match: any) => {
+  //   if (match.blueScore > match.redScore) {
+  //     matchResults[teams.indexOf(match.blueTeam)][
+  //       teams.indexOf(match.redTeam)
+  //     ] += 1;
+  //   } else if (match.blueScore < match.redScore) {
+  //     matchResults[teams.indexOf(match.redTeam)][
+  //       teams.indexOf(match.blueTeam)
+  //     ] += 1;
+  //   }
+  //   wins[teams.indexOf(match.blueTeam)] += match.blueScore;
+  //   wins[teams.indexOf(match.redTeam)] += match.redScore;
+  //   gameCount[teams.indexOf(match.blueTeam)] += 1;
+  //   gameCount[teams.indexOf(match.redTeam)] += 1;
+  // });
+
   matches.forEach((match: any) => {
-    if (match.blueScore > match.redScore) {
+    if (match.blueScore !== match.redScore) {
       matchResults[teams.indexOf(match.blueTeam)][
         teams.indexOf(match.redTeam)
-      ] += 1;
-    } else if (match.blueScore < match.redScore) {
+      ] += match.blueScore;
       matchResults[teams.indexOf(match.redTeam)][
         teams.indexOf(match.blueTeam)
-      ] += 1;
+      ] += match.redScore;
+
+      wins[teams.indexOf(match.blueTeam)] += match.blueScore;
+      wins[teams.indexOf(match.redTeam)] += match.redScore;
+      gameCount[teams.indexOf(match.blueTeam)] += 1;
+      gameCount[teams.indexOf(match.redTeam)] += 1;
     }
-    wins[teams.indexOf(match.blueTeam)] += match.blueScore;
-    wins[teams.indexOf(match.redTeam)] += match.redScore;
-    gameCount[teams.indexOf(match.blueTeam)] += 1;
-    gameCount[teams.indexOf(match.redTeam)] += 1;
   });
 
   // Calculate ratings
